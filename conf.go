@@ -10,7 +10,7 @@ import (
 	"strings"
 )
 
-const confDir = "/opt/trulioo/conf"
+const confDir = "/usr/local/conf"
 
 var (
 	appName   string
