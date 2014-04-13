@@ -39,10 +39,13 @@ func init() {
 		confFlags.Parse(myFlags)
 	}
 
-	Conf, err = ReadFile(confDir + "/" + appName + "-" + *env + ".yml")
+	Conf, err = ReadFile("~/conf" + "/" + appName + "-" + *env + ".yml")
 	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
+		Conf, err = ReadFile(confDir + "/" + appName + "-" + *env + ".yml")
+		if err != nil {
+			fmt.Println(err)
+			os.Exit(1)
+		}
 	}
 }
 
